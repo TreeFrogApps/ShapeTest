@@ -2,6 +2,8 @@ package com.treefrogapps.shapeview.shapeviewtest
 
 import android.content.Context
 import android.graphics.*
+import android.graphics.Color.HSVToColor
+import android.support.annotation.ColorInt
 import android.util.AttributeSet
 import android.view.View
 
@@ -12,19 +14,23 @@ class ShapeView : View {
     private var path = Path()
 
     constructor(context: Context) : super(context) {
-        setParams()
+        setParams(Color.RED)
     }
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        setParams()
+        setParams(Color.RED)
     }
 
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle) {
-        setParams()
+        setParams(Color.RED)
     }
 
     fun setSides(sides: Int) {
         this.sides = sides
+    }
+
+    fun setColor(hue : Float){
+        setParams(HSVToColor(floatArrayOf(hue, 1.0f, 1.0f)))
     }
 
     fun redraw(){
@@ -40,10 +46,9 @@ class ShapeView : View {
         }
     }
 
-    private fun setParams() {
+    private fun setParams(@ColorInt color : Int) {
         setWillNotDraw(false)
-
-        paint.color = Color.BLUE
+        paint.color = color
         paint.style = Paint.Style.FILL
         paint.isAntiAlias = false
     }

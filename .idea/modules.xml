@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ShapeViewTest.iml" filepath="$PROJECT_DIR$/ShapeViewTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/shapeview/app.iml" filepath="$PROJECT_DIR$/shapeview/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shapeview/shapeview.iml" filepath="$PROJECT_DIR$/shapeview/shapeview.iml" />
     </modules>
   </component>
 </project>
